@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "YSRExporter - YouTube Search Results Exporter",
+  "version": "1.0.0",
+  "description": "Export YouTube search results to CSV",
+  "options_ui": {
+    "page": "src/pages/options/index.html"
+  },
+  "action": {
+    "default_popup": "src/pages/popup/index.html",
+    "default_icon": {
+      "32": "logo.svg"
+    }
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "background": {
+    "service_worker": "src/pages/background/index.ts"
+  },
+  "permissions": ["activeTab", "downloads", "debugger"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/results*"],
+      "js": ["src/pages/content/index.tsx"],
+      "css": ["contentStyle.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost:3000/*"]
+  },
+  "devtools_page": "src/pages/devtools/index.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["contentStyle.css", "icon-128.png", "icon-32.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

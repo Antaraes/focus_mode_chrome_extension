@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YSRExporter</title>
+    <link rel="stylesheet" href="./src/index.css" />
+  </head>
+  <body class="bg-gray-100 w-80 h-96">
+    <div class="p-4">
+      <div class="flex items-center justify-center mb-4">
+        <img src="icons/icon48.png" alt="YSRExporter Logo" class="mr-2 w-8 h-8" />
+        <h1 class="text-xl font-bold text-red-600">YSRExporter</h1>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-4 mb-4">
+        <h2 class="text-lg font-semibold mb-2">YouTube Search Results Exporter</h2>
+        <p class="text-sm text-gray-600 mb-4">
+          Visit a YouTube search page to export results to CSV.
+        </p>
+
+        <div id="status" class="text-sm text-gray-700 mb-2">Not on a YouTube search page</div>
+
+        <button
+          id="goToYouTube"
+          class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded w-full flex items-center justify-center"
+        >
+          <span>Go to YouTube Search</span>
+        </button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-4">
+        <h3 class="text-md font-semibold mb-2">Export Options</h3>
+        <div class="flex flex-col gap-2">
+          <button
+            id="export20"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled
+          >
+            Export 20 (Free)
+          </button>
+          <button
+            id="export200"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled
+          >
+            Export 200
+          </button>
+          <button
+            id="exportAll"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled
+          >
+            Export All
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>
